@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myApp';
+  title = 'Bob';
+  typeExample = 26;
+
+  hobArray = ['Dancing', 'Running', 'Watching TV'];
+
+  isEating = false;
+
+  onClick(val: boolean): void {
+    this.isEating = val;
+  }
 }
