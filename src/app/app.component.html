@@ -1,26 +1,26 @@
 <div class="container-fluid customContainer">
   <div class="row header">
     <div class="col">
-      <h2>Header</h2>
+      <app-header></app-header>
     </div>
   </div>
 
   <div class="row rowHeight">
     <div class="col-3 sideBar">
-      <h2>Side-Bar</h2>
+      <app-side-bar></app-side-bar>
     </div>
     <div class="col">
       <div class="row">
         <div class="col subHeading">
-          <h2>Sub-Heading</h2>
+          <app-sub-heading></app-sub-heading>
         </div>
       </div>
       <div class="row">
         <div class="col subHeading2 subHeading21">
-          <h2>Sub-Heading 21</h2>
+          <app-sub-heading2 [subHeadingContentTitle]="subHeading21Title" [inputArray] = "hobArray"></app-sub-heading2>
         </div>
         <div class="col subHeading2">
-          <h2>Sub-Heading 22</h2>
+          <app-sub-heading2 [subHeadingContentTitle]="subHeading22Title" [displayContent] = "displayContent"></app-sub-heading2>
         </div>
       </div>
     </div>
