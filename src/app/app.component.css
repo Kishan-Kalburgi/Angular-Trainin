@@ -1,0 +1,13 @@
+.left {
+    height: 5em;
+    background-color: black;
+}
+
+.right {
+    height: 5em;
+    background-color: yellow;
+}
+
+.right, .left {
+    margin-top: 1em;
+}

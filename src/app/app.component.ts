@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'formApp';
+  toggle = false;
+  inputValue = '';
+  inputValue2 = '';
+
+  onClick(event) {
+    this.toggle = !this.toggle;
+    console.log(event);
+  }
+
+  onSubmit() {
+    console.log(this.inputValue + ' ' + this.inputValue2);
+  }
 }
