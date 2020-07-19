@@ -2,27 +2,48 @@
   <div class="row">
     <h1 [innerHTML]="title"></h1>
 
-  <!-- <button (click)="onClick($event)" [hidden]="toggle">On</button>
+    <!-- <button (click)="onClick($event)" [hidden]="toggle">On</button>
   <button (click)="onClick($event)" [hidden]="!toggle">Off</button> -->
-  <button (click)="onClick($event)" *ngIf="toggle">On</button>
-  <button (click)="onClick($event)" *ngIf="!toggle">Off</button>
+    <!-- <button (click)="onClick($event)" *ngIf="toggle">On</button> -->
+    <button (click)="onClick($event)" *ngIf="!toggle">Logout</button>
+
+  </div>
+  <div *ngIf="!toggle">
+    <div class="row">
+      <div class="col left" [ngClass]="{'col-2': toggle}"></div>
+      <div class="col right"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h2 class="text-center">{{inputValue}}</h2>
+    <hr>
+    <div class="text-center">
+      <input type="text" class="text-center" [(ngModel)]="inputValue">
+      +
+      <input type="text" class="text-center" [(ngModel)]="inputValue2">
+      <button (click)="onSubmit()">Submit</button>
+    </div>
   
-</div>
-  <div class="row">
-    <div class="col left" [ngClass]="{'col-2': toggle}"></div>
-    <div class="col right"></div>
+    <br>
+    <br>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <h2>Pipe Example:</h2>
+        <ul>
+          <li>Date: {{ currentDate | date:'short' }}</li>
+          <li>Upper Case: {{ upperCase | uppercase }}</li>
+          <li>Currency: {{ currency | currency }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <br>
-  <br>
-  <br>
-  <h2 class="text-center">{{inputValue}}</h2>
-  <hr>
-  <div class="text-center">
-    <input type="text" class="text-center" [(ngModel)] = "inputValue">
-    +
-    <input type="text" class="text-center" [(ngModel)] = "inputValue2">
-    <button (click)="onSubmit()">Submit</button>
+
+  <div class="row" *ngIf="toggle">
+    <div class="col">
+      <app-login (onLogin)="onLogin($event)"></app-login>
+    </div>
   </div>
 
 </div>
-

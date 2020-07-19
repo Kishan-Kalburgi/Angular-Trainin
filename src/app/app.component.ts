@@ -7,9 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'formApp';
-  toggle = false;
+  toggle = true;
   inputValue = '';
   inputValue2 = '';
+
+  currentDate = new Date();
+  upperCase = 'abce';
+  currency = 52.43;
 
   onClick(event) {
     this.toggle = !this.toggle;
@@ -19,4 +23,8 @@ export class AppComponent {
   onSubmit() {
     console.log(this.inputValue + ' ' + this.inputValue2);
   }
-}
+
+  onLogin(val) {
+    this.toggle = val;
+  }
+ }

@@ -1,0 +1,13 @@
+<h3 *ngIf="isError">Please enter both UserId and pwd</h3>
+<h3 *ngIf="!isError2">User ID pwd miss-match</h3>
+
+<form (ngSubmit)="onFormSubmit(loginForm)" #loginForm="ngForm">
+
+  <label for="userId">User Id</label><br>
+  <input type="text" name="userId" #userId [ngModel] = "user.userId" required><br>
+
+  <label for="pwd">Password</label><br>
+  <input type="password" name="pwd" #pwd [ngModel] = "user.pwd" required><br><br>
+
+  <input type="submit" value="Login">
+</form>
