@@ -5,6 +5,8 @@
     <!-- <button (click)="onClick($event)" [hidden]="toggle">On</button>
   <button (click)="onClick($event)" [hidden]="!toggle">Off</button> -->
     <!-- <button (click)="onClick($event)" *ngIf="toggle">On</button> -->
+    <button (click)="onYesClick()" *ngIf="!yesToggle">Yes</button>
+    <button (click)="onYesClick()" *ngIf="yesToggle && toggle">No</button>
     <button (click)="onClick($event)" *ngIf="!toggle">Logout</button>
 
   </div>
@@ -40,10 +42,14 @@
     </div>
   </div>
 
-  <div class="row" *ngIf="toggle">
+  <div class="row" *ngIf="toggle && yesToggle">
     <div class="col">
       <app-login (onLogin)="onLogin($event)"></app-login>
     </div>
+  </div>
+
+  <div class="row">
+    <app-list></app-list>
   </div>
 
 </div>

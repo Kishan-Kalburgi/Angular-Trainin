@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'formApp';
   toggle = true;
+  yesToggle = false;
   inputValue = '';
   inputValue2 = '';
 
@@ -27,4 +28,8 @@ export class AppComponent {
   onLogin(val) {
     this.toggle = val;
   }
- }
+
+  onYesClick() {
+    this.yesToggle = true;
+  }
+}

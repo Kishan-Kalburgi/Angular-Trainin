@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
   @Output() onLogin = new EventEmitter<boolean>();
 
   user: UserModal = {
-    userId: '',
-    pwd: null
+    userId: 'admin',
+    pwd: 'admin'
   };
 
   isError = false;
