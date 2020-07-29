@@ -14,11 +14,27 @@ export class ListComponent implements OnInit {
   constructor(private _dataService: DataService) { }
 
   ngOnInit() {
-    this._dataService.getCountryNames().subscribe((data) => {
-      console.log(data);
+    console.log('Before Subscribe');
+    this._dataService.getCountryNames().subscribe(
+      (data) => {
+      console.log(data['result']);
       this.countryList = data['result'];
-      console.log('Contry List', this.countryList);
+      this.countryList.sort(this.compare);
     });
+  }
+
+  compare(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const bandA = a.name.toUpperCase();
+    const bandB = b.name.toUpperCase();
+
+    let comparison = 0;
+    if (bandA > bandB) {
+      comparison = 1;
+    } else if (bandA < bandB) {
+      comparison = -1;
+    }
+    return comparison;
   }
 
 }
