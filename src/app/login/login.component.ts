@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserModal } from '../modals/user.modal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   isError = false;
   isError2 = true;
 
-  constructor() {
+  constructor(private _router: Router) {
   }
 
   ngOnInit() {
@@ -37,7 +38,8 @@ export class LoginComponent implements OnInit {
 
   login(userData: UserModal): boolean {
     if (userData.userId === 'admin' && userData.pwd === 'admin') {
-      this.onLogin.emit(false);
+      // this.onLogin.emit(false);
+      this._router.navigate(['/list']);
       return true;
     } else {
       this.onLogin.emit(true);

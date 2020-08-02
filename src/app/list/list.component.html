@@ -7,7 +7,7 @@
       <th scope="col">Code</th>
     </thead>
     <tbody>
-      <tr *ngFor="let item of countryList">
+      <tr *ngFor="let item of countryList" (click)="onRowClick(item)">
         <td scope="row">{{ item.name }}</td>
         <td>{{ item.code }}</td>
       </tr>

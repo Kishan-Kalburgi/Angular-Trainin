@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { DataService } from '../service/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -11,7 +12,7 @@ export class ListComponent implements OnInit {
 
   countryList: any[];
 
-  constructor(private _dataService: DataService) { }
+  constructor(private _dataService: DataService, private _router: Router) { }
 
   ngOnInit() {
     console.log('Before Subscribe');
@@ -35,6 +36,11 @@ export class ListComponent implements OnInit {
       comparison = -1;
     }
     return comparison;
+  }
+
+  onRowClick(item) {
+    console.log(item);
+    this._router.navigate(['/more'], { queryParams : item});
   }
 
 }

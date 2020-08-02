@@ -1,10 +1,20 @@
 <div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+
+
+
+
+
+
+<!-- <div class="container">
   <div class="row">
     <h1 [innerHTML]="title"></h1>
 
-    <!-- <button (click)="onClick($event)" [hidden]="toggle">On</button>
-  <button (click)="onClick($event)" [hidden]="!toggle">Off</button> -->
-    <!-- <button (click)="onClick($event)" *ngIf="toggle">On</button> -->
+    <button (click)="onClick($event)" [hidden]="toggle">On</button>
+  <button (click)="onClick($event)" [hidden]="!toggle">Off</button>
+    <button (click)="onClick($event)" *ngIf="toggle">On</button>
     <button (click)="onYesClick()" *ngIf="!yesToggle">Yes</button>
     <button (click)="onYesClick()" *ngIf="yesToggle && toggle">No</button>
     <button (click)="onClick($event)" *ngIf="!toggle">Logout</button>
@@ -52,4 +62,4 @@
     <app-list></app-list>
   </div>
 
-</div>
+</div> -->
