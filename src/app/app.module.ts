@@ -8,13 +8,17 @@ import { LoginComponent } from './login/login.component';
 import { ListComponent } from './list/list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MoreInfoComponent } from './more-info/more-info.component';
+import { TableBillComponent } from './table-bill/table-bill.component';
+import { AddBillComponent } from './add-bill/add-bill.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ListComponent,
-    MoreInfoComponent
+    MoreInfoComponent,
+    TableBillComponent,
+    AddBillComponent
   ],
   imports: [
     BrowserModule,
