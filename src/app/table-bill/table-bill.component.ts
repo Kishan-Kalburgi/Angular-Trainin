@@ -11,6 +11,7 @@ import { BillType } from '../modals/bill.modal';
 export class TableBillComponent implements OnInit {
 
   billArray: BillType[];
+  backBillArray: BillType[];
 
   // End Point: https://ufixibreak.herokuapp.com/bill/all
   constructor(private _service: DataService) { }
@@ -19,6 +20,7 @@ export class TableBillComponent implements OnInit {
     this._service.getAllBill().subscribe(
       (res) => {
         this.billArray = res['data'];
+        this.backBillArray = res['data'];
         console.log(res['data']);
       },
       (err) => {
@@ -27,4 +29,29 @@ export class TableBillComponent implements OnInit {
     );
   }
 
+  applyFilter(event, propertyType) {
+    console.log(event);
+    this.billArray = this.backBillArray.filter(e => {
+      if (event === '') {
+        return true;
+      } else {
+        if (typeof e[propertyType] === 'number') {
+          return e[propertyType].toString().includes(event);
+        } else {
+          return e[propertyType].toLocaleLowerCase().includes(event.toLocaleLowerCase());
+        }
+      }
+    });
+  }
+
+  applyBtnFilter(filterType: string) {
+    console.log(filterType);
+    this.billArray = this.backBillArray.filter(e => {
+      if (filterType === '' || e.status === filterType) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
 }

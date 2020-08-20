@@ -1,3 +1,23 @@
+<div class="row my-3">
+  <div class="col-1">
+    <button class="btn btn-primary" (click)="applyBtnFilter('')">All</button>
+  </div>
+  <div class="col-1">
+    <button class="btn btn-success" (click)="applyBtnFilter('todo')">Todo</button>
+  </div>
+  <div class="col">
+    <button class="btn btn-danger" (click)="applyBtnFilter('ready')">Ready</button>
+  </div>
+</div>
+<div class="row my-3">
+  <div class="col-3">
+    <input type="text" class="form-control" placeholder="Search..." (keyup)="applyFilter($event.target.value, 'customerName')">
+  </div>
+  <div class="col-2">
+    <input type="text" class="form-control" placeholder="Search..." (keyup)="applyFilter($event.target.value, 'phoneNumber')">
+  </div>
+</div>
+
 <table class="table">
   <thead>
     <th scope="col">Name</th>
